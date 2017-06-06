@@ -14,4 +14,5 @@ function getPrimes(n){
     if (prime === 0 && prime === ''){
       console.log("invalid input");
     }
+    return prime.append(primeList);
 }
