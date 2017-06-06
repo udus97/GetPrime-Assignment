@@ -1,20 +1,26 @@
 function getPrimes(n){
   var primeList = [];
-  for (var c = 0; c <= 10; c++) {
-    var prime = false;
-    for (var i = 2; i <= c; i++) {
-        if (c % i === 0 && i !== c) {
-          prime = true;
-        }
+  var prime;
+  if (n === 0 || n === 1 || n < 1 || isNaN(n) === true){
+    return false;
+  }
+  else{
+    for (var c = 2; c <= n; c++) {
+      prime = true;
+      for (var i = 2; i < c; i++) {
+        if (c % i === 0) {
+          prime = false;
+        
     }
-    if (prime === false) {
-      console.log(c);
+    }
+      if (prime === true) {
+        primeList.push(c);
+        
+      }
       
     }
-    if (prime === 0 && prime === ''){
-      console.log("invalid input");
-    }
+      return primeList;
+  }
 }
-return prime.append(primeList);
-}
-getPrimes(10);
+
+getPrimes(100);
